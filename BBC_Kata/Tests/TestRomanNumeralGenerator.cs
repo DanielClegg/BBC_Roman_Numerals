@@ -25,11 +25,28 @@ namespace Tests
         }
         
         [Test]
+        public void Test_ForValue_4_ShouldReturnV()
+        {
+            var result = _generator.Generate(4);
+            
+            Assert.IsTrue(result == "IV");
+        }
+        
+        [Test]
         public void Test_ForValue_5_ShouldReturnV()
         {
             var result = _generator.Generate(5);
             
             Assert.IsTrue(result == "V");
+        }
+        
+        
+        [Test]
+        public void Test_ForValue_8_ShouldReturnVIII()
+        {
+            var result = _generator.Generate(8);
+            
+            Assert.IsTrue(result == "VIII");
         }
         
         [Test]
@@ -46,6 +63,14 @@ namespace Tests
             var result = _generator.Generate(20);
             
             Assert.IsTrue(result == "XX");
+        }
+        
+        [Test]
+        public void Test_ForValue_21_ShouldReturnXXI()
+        {
+            var result = _generator.Generate(21);
+            
+            Assert.IsTrue(result == "XXI");
         }
         
         [Test]
