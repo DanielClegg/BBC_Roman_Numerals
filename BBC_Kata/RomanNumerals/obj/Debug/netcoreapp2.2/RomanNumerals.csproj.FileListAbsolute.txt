@@ -1,9 +1,0 @@
-/Users/danielclegg/Projects/git/bbc/BBC_Kata/RomanNumerals/bin/Debug/netcoreapp2.2/RomanNumerals.deps.json
-/Users/danielclegg/Projects/git/bbc/BBC_Kata/RomanNumerals/bin/Debug/netcoreapp2.2/RomanNumerals.dll
-/Users/danielclegg/Projects/git/bbc/BBC_Kata/RomanNumerals/bin/Debug/netcoreapp2.2/RomanNumerals.pdb
-/Users/danielclegg/Projects/git/bbc/BBC_Kata/RomanNumerals/obj/Debug/netcoreapp2.2/RomanNumerals.csprojAssemblyReference.cache
-/Users/danielclegg/Projects/git/bbc/BBC_Kata/RomanNumerals/obj/Debug/netcoreapp2.2/RomanNumerals.csproj.CoreCompileInputs.cache
-/Users/danielclegg/Projects/git/bbc/BBC_Kata/RomanNumerals/obj/Debug/netcoreapp2.2/RomanNumerals.AssemblyInfoInputs.cache
-/Users/danielclegg/Projects/git/bbc/BBC_Kata/RomanNumerals/obj/Debug/netcoreapp2.2/RomanNumerals.AssemblyInfo.cs
-/Users/danielclegg/Projects/git/bbc/BBC_Kata/RomanNumerals/obj/Debug/netcoreapp2.2/RomanNumerals.dll
-/Users/danielclegg/Projects/git/bbc/BBC_Kata/RomanNumerals/obj/Debug/netcoreapp2.2/RomanNumerals.pdb
