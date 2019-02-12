@@ -8,12 +8,14 @@ namespace RomanNumerals
     {
 
         Dictionary<string, int> _romanNumeralValues = new Dictionary<string, int>() {
-            {"I", 1}, 
-            {"V",5},
-            {"X", 10}, 
-            {"L", 50}, 
-            {"C", 100}, 
-            {"D",500}};
+{"D",500}, {"C", 100}, {"L", 50},    {"X", 10},  {"V",5},
+            {"I", 1}
+           
+         
+            
+           
+            
+};
         
         public string Generate(int number)
         {
