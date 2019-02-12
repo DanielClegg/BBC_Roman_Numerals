@@ -27,6 +27,6 @@ Written in dotnet core v2.2
 
 ## Tests:
 
-  to run the complete test suit use the following command form the solution root.
+  To run the complete test suit use the following command form the solution root.
   
   dotnet test Tests/Tests.csproj --verbosity normal
