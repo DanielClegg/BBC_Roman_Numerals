@@ -1,5 +1,6 @@
 #region
 
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -11,46 +12,46 @@ namespace RomanNumerals
     {
         private readonly Dictionary<string, int> _romanNumeralValues = new Dictionary<string, int>
         {
-            {"M", 1000}, {"CM", 900}, {"D", 500}, {"CD", 400},{"C", 100},{"XC", 90}, {"L", 50}, {"XL", 40},{"X", 10}, {"IX", 9}, {"V", 5},{"IV", 4},
+            {"M", 1000}, {"CM", 900}, {"D", 500}, {"CD", 400}, {"C", 100}, {"XC", 90}, {"L", 50}, {"XL", 40}, {"X", 10},
+            {"IX", 9}, {"V", 5}, {"IV", 4},
             {"I", 1}
         };
 
         public string Generate(int number)
         {
-            var total = number;
-            var returnString = "";
+            if (number == 0)
+                return "nulla";
+            if (number < 0 || number > 3999)
+                throw new ArgumentOutOfRangeException("Roman Numeral Generator only accepts values between 0 and 3999");
 
-            foreach (var numeral in _romanNumeralValues)
+            var runningTotal = number;
+            var numeralString = "";
+
+            foreach (var (key, value) in _romanNumeralValues.OrderByDescending(c => c.Value))
             {
-                if (total <= 0)
+                if (runningTotal <= 0)
                     break;
 
-                if (total == numeral.Value)
+                if (runningTotal == value)
                 {
-                    total = total - numeral.Value;
-                    returnString += numeral.Key;
+                    numeralString += key;
+
+                    break;
                 }
 
-
-                if (total > numeral.Value)
+                if (runningTotal > value)
                 {
-                    var tempTotal = total / numeral.Value;
-                    var remaining = total - tempTotal * numeral.Value;
-                    total = remaining;
+                    var countOfNumeralsInCurrentTotal = runningTotal / value;
+                    var remainder = runningTotal - countOfNumeralsInCurrentTotal * value;
 
-                    returnString = returnString + string.Concat(Enumerable.Repeat(numeral.Key, tempTotal));
+                    runningTotal = remainder;
+
+                    numeralString = numeralString +
+                                    string.Concat(Enumerable.Repeat(key, countOfNumeralsInCurrentTotal));
                 }
             }
 
-            return returnString;
-        }
-
-        private string Append(string str, int count)
-        {
-            var returnString = "";
-            for (var i = 0; i < count; i++) returnString = returnString + str;
-
-            return returnString;
+            return numeralString;
         }
     }
 }

@@ -16,7 +16,7 @@ namespace Tests
         }
         
         [Test]
-        public void Test_ForValue_1_ShouldReturnI()
+        public void Test_ForValue_1_Should_Return_I()
         {
 
             var result = _generator.Generate(1);
@@ -25,7 +25,7 @@ namespace Tests
         }
         
         [Test]
-        public void Test_ForValue_4_ShouldReturnIV()
+        public void Test_ForValue_4_Should_Return_IV()
         {
             var result = _generator.Generate(4);
             
@@ -33,7 +33,7 @@ namespace Tests
         }
         
         [Test]
-        public void Test_ForValue_5_ShouldReturnV()
+        public void Test_ForValue_5_Should_Return_V()
         {
             var result = _generator.Generate(5);
             
@@ -42,7 +42,7 @@ namespace Tests
         
         
         [Test]
-        public void Test_ForValue_8_ShouldReturnVIII()
+        public void Test_ForValue_8_Should_Return_VIII()
         {
             var result = _generator.Generate(8);
             
@@ -50,7 +50,7 @@ namespace Tests
         }
         
         [Test]
-        public void Test_ForValue_9_ShouldReturnIX()
+        public void Test_ForValue_9_Should_Return_IX()
         {
             var result = _generator.Generate(9);
             
@@ -58,7 +58,7 @@ namespace Tests
         }
         
         [Test]
-        public void Test_ForValue_10_ShouldReturnX()
+        public void Test_ForValue_10_Should_Return_X()
         {
             var result = _generator.Generate(10);
             
@@ -66,7 +66,7 @@ namespace Tests
         }
         
         [Test]
-        public void Test_ForValue_20_ShouldReturnXX()
+        public void Test_ForValue_20_Should_Return_XX()
         {
             var result = _generator.Generate(20);
             
@@ -74,7 +74,7 @@ namespace Tests
         }
         
         [Test]
-        public void Test_ForValue_21_ShouldReturnXXI()
+        public void Test_ForValue_21_Should_Return_XXI()
         {
             var result = _generator.Generate(21);
             
@@ -82,11 +82,25 @@ namespace Tests
         }
         
         [Test]
-        public void Test_ForValue_3999_ShouldReturnMMMCMXCIX()
+        public void Test_ForValue_3999_Should_Return_MMMCMXCIX()
         {
             var result = _generator.Generate(3999);
             
             Assert.IsTrue(result == "MMMCMXCIX");
+        }
+        
+        [Test]
+        public void Test_ForValue_GreaterThan3999_Should_Throw_ArgumentException()
+        {
+            Assert.Throws<ArgumentOutOfRangeException>(()=>_generator.Generate(4000));
+        }
+        
+        [Test]
+        public void Test_ForValue_0_Should_Return_nulla()
+        {
+            var result = _generator.Generate(0);
+            
+            Assert.IsTrue(result == "nulla");
         }
     }
 }
