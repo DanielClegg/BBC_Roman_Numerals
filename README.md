@@ -1,6 +1,6 @@
 # BBC Roman Numerals - Code Test
 
-Written in dotnet core v2.2
+Written c# using dotnet core v2.2
 
 ## Requirements:
 
