@@ -1,3 +1,15 @@
+/*
+ * Roman Numeral Generator for the BBC technical test
+ *
+ * Entry point: Generate(int number)
+ *
+ * Limited to generating roman numerals between zero and 3999
+ * 
+ * (Not Thread Safe)
+ *
+ * by Daniel Clegg - Feb 2019
+ */
+
 #region
 
 using System;
@@ -17,6 +29,11 @@ namespace RomanNumerals
             {"I", 1}
         };
 
+        /// <summary>
+        ///     Generates the corresponding Roman numerals from an integer
+        /// </summary>
+        /// <param name="number" type="integer"></param>
+        /// <returns>Roman numerals as a string</returns>
         public string Generate(int number)
         {
             if (number == 0)
