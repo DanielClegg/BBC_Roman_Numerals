@@ -1,12 +1,11 @@
 # BBC Roman Numerals - Code Test
-BBC Code test - Roman_Numerals
 
 Written in dotnet core v2.2
 
 ## Requirements:
 
-Dotnet core 2.2
-NUnit
+* Dotnet core 2.2
+* NUnit
 
 ## Installation/Setup
 
