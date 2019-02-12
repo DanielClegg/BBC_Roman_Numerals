@@ -25,7 +25,7 @@ namespace Tests
         }
         
         [Test]
-        public void Test_ForValue_4_ShouldReturnV()
+        public void Test_ForValue_4_ShouldReturnIV()
         {
             var result = _generator.Generate(4);
             
@@ -47,6 +47,14 @@ namespace Tests
             var result = _generator.Generate(8);
             
             Assert.IsTrue(result == "VIII");
+        }
+        
+        [Test]
+        public void Test_ForValue_9_ShouldReturnIX()
+        {
+            var result = _generator.Generate(9);
+            
+            Assert.IsTrue(result == "IX");
         }
         
         [Test]
@@ -78,7 +86,7 @@ namespace Tests
         {
             var result = _generator.Generate(3999);
             
-            Assert.IsTrue(result == "MMMCMXCIX(");
+            Assert.IsTrue(result == "MMMCMXCIX");
         }
     }
 }

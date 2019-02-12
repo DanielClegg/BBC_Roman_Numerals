@@ -1,7 +1,7 @@
 #region
 
-using System;
 using System.Collections.Generic;
+using System.Linq;
 
 #endregion
 
@@ -9,23 +9,12 @@ namespace RomanNumerals
 {
     public class RomanNumeralGenerator : IRomanNumeralGenerator
     {
-        private readonly Dictionary<char, int> _romanNumeralValues = new Dictionary<char, int>
+        private readonly Dictionary<string, int> _romanNumeralValues = new Dictionary<string, int>
         {
-          {'D', 500}, {'C', 100}, {'L', 50}, {'X', 10}, {'V', 5},
-          {'I', 1}
+            {"M", 1000}, {"CM", 900}, {"D", 500}, {"CD", 400},{"C", 100},{"XC", 90}, {"L", 50}, {"XL", 40},{"X", 10}, {"IX", 9}, {"V", 5},{"IV", 4},
+            {"I", 1}
         };
 
-        private string Append(string str, int count)
-        {
-            var returnString = "";
-            for (int i = 0; i < count; i++)
-            {
-                returnString = returnString + str;
-            }
-
-            return returnString;
-        }
-        
         public string Generate(int number)
         {
             var total = number;
@@ -38,19 +27,28 @@ namespace RomanNumerals
 
                 if (total == numeral.Value)
                 {
+                    total = total - numeral.Value;
                     returnString += numeral.Key;
-                    total = -numeral.Value;
                 }
+
 
                 if (total > numeral.Value)
                 {
                     var tempTotal = total / numeral.Value;
-                    var remaining = total - (tempTotal * numeral.Value);
+                    var remaining = total - tempTotal * numeral.Value;
                     total = remaining;
 
-                    returnString = returnString + new string(numeral.Key, tempTotal);
+                    returnString = returnString + string.Concat(Enumerable.Repeat(numeral.Key, tempTotal));
                 }
             }
+
+            return returnString;
+        }
+
+        private string Append(string str, int count)
+        {
+            var returnString = "";
+            for (var i = 0; i < count; i++) returnString = returnString + str;
 
             return returnString;
         }
