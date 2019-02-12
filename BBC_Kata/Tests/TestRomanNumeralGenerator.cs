@@ -1,39 +1,59 @@
 ﻿using System;
 using NUnit.Framework;
+using RomanNumerals;
 
 namespace Tests
 {
     [TestFixture]
     public class TestRomanNumeralGenerator
     {
+        private RomanNumeralGenerator _generator;
+
+        [SetUp]
+        public void Setup()
+        {
+            _generator = new RomanNumeralGenerator();
+        }
+        
         [Test]
         public void Test_ForValue_1_ShouldReturnI()
         {
+
+            var result = _generator.Generate(1);
             
+            Assert.IsTrue(result == "I");
         }
         
         [Test]
         public void Test_ForValue_5_ShouldReturnV()
         {
+            var result = _generator.Generate(5);
             
+            Assert.IsTrue(result == "V");
         }
         
         [Test]
         public void Test_ForValue_10_ShouldReturnX()
         {
+            var result = _generator.Generate(10);
             
+            Assert.IsTrue(result == "X");
         }
         
         [Test]
         public void Test_ForValue_20_ShouldReturnXX()
         {
+            var result = _generator.Generate(20);
             
+            Assert.IsTrue(result == "XX");
         }
         
         [Test]
         public void Test_ForValue_3999_ShouldReturnMMMCMXCIX()
         {
+            var result = _generator.Generate(3999);
             
+            Assert.IsTrue(result == "MMMCMXCIX(");
         }
     }
 }

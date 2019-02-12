@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace RomanNumerals
 {
@@ -6,12 +6,7 @@ namespace RomanNumerals
     {
         public string Generate(int number)
         {
-                throw new NotImplementedException();
+            throw new NotImplementedException();
         }
-    }
-
-    public interface IRomanNumeralGenerator
-    {
-        string Generate(int number);
     }
 }
