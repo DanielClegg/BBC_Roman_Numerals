@@ -14,13 +14,18 @@ NUnit
 
   brew cask install dotnet-sdk
   
-### linux:
+### Linux:
   
   Please use these instructions for your particular version of linux.
   
   https://dotnet.microsoft.com/download/linux-package-manager/ubuntu18-04/sdk-current
   
+### Windows
+
+  Download the correct installer for your system either 32/64bit
   
+  https://dotnet.microsoft.com/download
+
 ## Tests:
 
   to run the complete test suit use the following command form the solution root.
