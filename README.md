@@ -8,20 +8,20 @@ Written in dotnet core v2.2
 Dotnet core 2.2
 NUnit
 
-Installation/Setup
+## Installation/Setup
 
-Mac:
+### Mac:
 
   brew cask install dotnet-sdk
   
-linux:
+### linux:
   
   Please use these instructions for your particular version of linux.
   
   https://dotnet.microsoft.com/download/linux-package-manager/ubuntu18-04/sdk-current
   
   
-Tests:
+## Tests:
 
   to run the complete test suit use the following command form the solution root.
   
